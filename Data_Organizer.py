@@ -41,6 +41,22 @@ print("3. Parquet (.parquet)");
 print("4. HDF5 (.H5)"); 
 print("5. JSON (.json)"); 
 option = input("Selecione o número correspondente ao tipo de arquivo: "); 
-
-# new_dataframe.to_excel('Data_filtered.xlsx', index=False); 
-# print("Dados salvos em 'Data_filtered.xlsx'"); 
+match option:
+    case 1:
+        new_dataframe.to_excel('Data_filtered.xlsx', index=False);      
+        print("Dados salvos em 'Data_filtered.xlsx'"); 
+    case 2:
+        new_dataframe.to_csv('Data_filtered.csv', index=False);      
+        print("Dados salvos em 'Data_filtered.csv'"); 
+    case 3:
+        new_dataframe.to_parquet('Data_filtered.parquet', index=False);      
+        print("Dados salvos em 'Data_filtered.parquet'"); 
+    case 4:
+        new_dataframe.to_hdf('Data_filtered.h5', index=False);      
+        print("Dados salvos em 'Data_filtered.h5'"); 
+    case 5:
+        new_dataframe.to_json('Data_filtered.json', index=False);      
+        print("Dados salvos em 'Data_filtered.json'"); 
+    case _:
+        print("Por favor, selecione uma opção válida!"); 
+        option = input("Selecione o número correspondente ao tipo de arquivo: "); 
