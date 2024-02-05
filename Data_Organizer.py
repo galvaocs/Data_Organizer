@@ -34,5 +34,13 @@ for i in range(4):
     dataframes.append(df_field); 
 
 new_dataframe = pd.concat(dataframes, axis=1); 
-new_dataframe.to_excel('Data_filtered.xlsx', index=False); 
-print("Dados salvos em 'Data_filtered.xlsx'"); 
+print("Escolha o tipo de arquivo em que os dados tratados serão salvos: "); 
+print("1. Excel (.xlsx)"); 
+print("2. CSV (.csv)"); 
+print("3. Parquet (.parquet)"); 
+print("4. HDF5 (.H5)"); 
+print("5. JSON (.json)"); 
+option = input("Selecione o número correspondente ao tipo de arquivo: "); 
+
+# new_dataframe.to_excel('Data_filtered.xlsx', index=False); 
+# print("Dados salvos em 'Data_filtered.xlsx'"); 
