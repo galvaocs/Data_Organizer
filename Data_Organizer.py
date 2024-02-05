@@ -40,21 +40,27 @@ print("2. CSV (.csv)");
 print("3. Parquet (.parquet)"); 
 print("4. HDF5 (.H5)"); 
 print("5. JSON (.json)"); 
+output_directory = input("Digite o caminho do diretório de destino: ")
 option = input("Selecione o número correspondente ao tipo de arquivo: "); 
 match option:
     case "1":
+        output_path = f"{output_directory}/Data_filtered.xlsx"
         new_dataframe.to_excel('Data_filtered.xlsx', index=False);      
         print("Dados salvos em 'Data_filtered.xlsx'"); 
     case "2":
+        output_path = f"{output_directory}/Data_filtered.csv"
         new_dataframe.to_csv('Data_filtered.csv', index=False);      
         print("Dados salvos em 'Data_filtered.csv'"); 
     case "3":
+        output_path = f"{output_directory}/Data_filtered.parquet"
         new_dataframe.to_parquet('Data_filtered.parquet', index=False);      
         print("Dados salvos em 'Data_filtered.parquet'"); 
     case "4":
+        output_path = f"{output_directory}/Data_filtered.h5"
         new_dataframe.to_hdf('Data_filtered.h5', index=False);      
         print("Dados salvos em 'Data_filtered.h5'"); 
     case "5":
+        output_path = f"{output_directory}/Data_filtered.json"
         new_dataframe.to_json('Data_filtered.json', index=False);      
         print("Dados salvos em 'Data_filtered.json'"); 
     case _:
