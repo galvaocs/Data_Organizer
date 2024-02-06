@@ -40,7 +40,7 @@ print("2. CSV (.csv)");
 print("3. Parquet (.parquet)"); 
 print("4. HDF5 (.H5)"); 
 print("5. JSON (.json)"); 
-output_directory = input("Digite o caminho do diretório de destino: ")
+output_directory = input("Digite o caminho do diretório de destino: "); 
 option = input("Selecione o número correspondente ao tipo de arquivo: "); 
 match option:
     case "1":
@@ -65,4 +65,5 @@ match option:
         print("Dados salvos em 'Data_filtered.json'"); 
     case _:
         print("Por favor, selecione uma opção válida!"); 
+        output_directory = input("Digite o caminho do diretório de destino: "); 
         option = input("Selecione o número correspondente ao tipo de arquivo: "); 
