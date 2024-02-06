@@ -46,23 +46,23 @@ match option:
     case "1":
         output_path = f"{output_directory}/Data_filtered.xlsx"
         new_dataframe.to_excel(output_path, index=False);      
-        print("Dados salvos em 'Data_filtered.xlsx'"); 
+        print(f"Dados salvos em '{output_path}'"); 
     case "2":
         output_path = f"{output_directory}/Data_filtered.csv"
         new_dataframe.to_csv(output_path, index=False);      
-        print("Dados salvos em 'Data_filtered.csv'"); 
+        print(f"Dados salvos em '{output_path}'"); 
     case "3":
         output_path = f"{output_directory}/Data_filtered.parquet"
         new_dataframe.to_parquet(output_path, index=False);      
-        print("Dados salvos em 'Data_filtered.parquet'"); 
+        print(f"Dados salvos em '{output_path}'"); 
     case "4":
         output_path = f"{output_directory}/Data_filtered.h5"
-        new_dataframe.to_hdf(output_path, index=False);      
-        print("Dados salvos em 'Data_filtered.h5'"); 
+        new_dataframe.to_hdf(output_path, key='data', index=False);      
+        print(f"Dados salvos em '{output_path}'"); 
     case "5":
         output_path = f"{output_directory}/Data_filtered.json"
         new_dataframe.to_json(output_path, index=False);      
-        print("Dados salvos em 'Data_filtered.json'"); 
+        print(f"Dados salvos em '{output_path}'"); 
     case _:
         print("Por favor, selecione uma opção válida!"); 
         output_directory = input("Digite o caminho do diretório de destino: "); 
