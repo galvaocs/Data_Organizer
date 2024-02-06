@@ -34,36 +34,42 @@ for i in range(4):
     dataframes.append(df_field); 
 
 new_dataframe = pd.concat(dataframes, axis=1); 
-print("Escolha o tipo de arquivo em que os dados tratados serão salvos: "); 
+print("\nEscolha o tipo de arquivo em que os dados tratados serão salvos: "); 
 print("1. Excel (.xlsx)"); 
 print("2. CSV (.csv)"); 
 print("3. Parquet (.parquet)"); 
 print("4. HDF5 (.H5)"); 
 print("5. JSON (.json)"); 
-output_directory = input("Digite o caminho do diretório de destino: "); 
-option = input("Selecione o número correspondente ao tipo de arquivo: "); 
-match option:
-    case "1":
-        output_path = f"{output_directory}/Data_filtered.xlsx"
-        new_dataframe.to_excel(output_path, index=False);      
-        print(f"Dados salvos em '{output_path}'"); 
-    case "2":
-        output_path = f"{output_directory}/Data_filtered.csv"
-        new_dataframe.to_csv(output_path, index=False);      
-        print(f"Dados salvos em '{output_path}'"); 
-    case "3":
-        output_path = f"{output_directory}/Data_filtered.parquet"
-        new_dataframe.to_parquet(output_path, index=False);      
-        print(f"Dados salvos em '{output_path}'"); 
-    case "4":
-        output_path = f"{output_directory}/Data_filtered.h5"
-        new_dataframe.to_hdf(output_path, key='data', index=False);      
-        print(f"Dados salvos em '{output_path}'"); 
-    case "5":
-        output_path = f"{output_directory}/Data_filtered.json"
-        new_dataframe.to_json(output_path, index=False);      
-        print(f"Dados salvos em '{output_path}'"); 
-    case _:
-        print("Por favor, selecione uma opção válida!"); 
-        output_directory = input("Digite o caminho do diretório de destino: "); 
-        option = input("Selecione o número correspondente ao tipo de arquivo: "); 
+
+while True:
+    output_directory = input("\nDigite o caminho do diretório de destino: "); 
+    option = input("Selecione o número correspondente ao tipo de arquivo: "); 
+    match option:
+        case "1":
+            output_path = f"{output_directory}/Data_filtered.xlsx"
+            new_dataframe.to_excel(output_path, index=False);      
+            print(f"Dados salvos em '{output_path}'"); 
+            break
+        case "2":
+            output_path = f"{output_directory}/Data_filtered.csv"
+            new_dataframe.to_csv(output_path, index=False);      
+            print(f"Dados salvos em '{output_path}'"); 
+            break
+        case "3":
+            output_path = f"{output_directory}/Data_filtered.parquet"
+            new_dataframe.to_parquet(output_path, index=False);      
+            print(f"Dados salvos em '{output_path}'"); 
+            break
+        case "4":
+            output_path = f"{output_directory}/Data_filtered.h5"
+            new_dataframe.to_hdf(output_path, key='data', index=False);      
+            print(f"Dados salvos em '{output_path}'"); 
+            break
+        case "5":
+            output_path = f"{output_directory}/Data_filtered.json"
+            new_dataframe.to_json(output_path, index=False);      
+            print(f"Dados salvos em '{output_path}'"); 
+            break
+        case _:
+            print("\nPor favor, selecione uma opção válida!\n"); 
+            continue 
