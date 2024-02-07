@@ -1,7 +1,8 @@
 import pandas as pd;
 import re;
 
-data = pd.read_csv('Data_Organizer/Data.csv'); 
+file_type = input("Digite o tipo do arquivo a ser lido (csv, excel, parquet, json): ")
+data = getattr(pd, f'read_{file_type}')()
 def replace_char(dataframe, replacement): 
     for before_char, after_char in replacement.items():
         dataframe = dataframe.replace(before_char, after_char, regex=True); 
