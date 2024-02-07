@@ -38,8 +38,7 @@ print("\nEscolha o tipo de arquivo em que os dados tratados serão salvos: ");
 print("1. Excel (.xlsx)"); 
 print("2. CSV (.csv)"); 
 print("3. Parquet (.parquet)"); 
-print("4. HDF5 (.H5)"); 
-print("5. JSON (.json)"); 
+print("4. JSON (.json)"); 
 
 while True:
     output_directory = input("\nDigite o caminho do diretório de destino: "); 
@@ -61,11 +60,6 @@ while True:
             print(f"Dados salvos em '{output_path}'"); 
             break
         case "4":
-            output_path = f"{output_directory}/Data_filtered.h5"
-            new_dataframe.to_hdf(output_path, key='data', index=False);      
-            print(f"Dados salvos em '{output_path}'"); 
-            break
-        case "5":
             output_path = f"{output_directory}/Data_filtered.json"
             new_dataframe.to_json(output_path, index=False);      
             print(f"Dados salvos em '{output_path}'"); 
